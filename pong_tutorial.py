@@ -3,8 +3,11 @@ import sys
 
 # Initialize Pygame
 pygame.init()
-# Load Silkscreen font
-silkscreen_font_path = r'C:\KelsCodes\YarnBall\Silkscreen-Regular.ttf'  # Update with the actual path
+
+# Path to the Silkscreen font file and Load Silkscreen font
+silkscreen_font_path = r'C:\KelsCodes\YarnBall\Silkscreen-Regular.ttf'  # Correct path to the font file
+
+# Load Silkscreen font, 36pt size
 silkscreen_font = pygame.font.Font(silkscreen_font_path, 36)
  
 # Screen dimensions
@@ -158,7 +161,8 @@ while running:
     screen.blit(paddle_b_image, paddle_b.topleft)
     # Draw the ball
     screen.blit(ball_image, (ball.x, ball.y))
-    score_text = font.render(f"Player A: {score_a} Player B: {score_b}", True, WHITE)
+    score_text = silkscreen_font.render;
+    current_score(); True, WHITE
     screen.blit(score_text, (WIDTH / 2 - score_text.get_width() / 2, 20))
 
     # Function to get user initials
@@ -174,7 +178,7 @@ while running:
                     elif event.key == pygame.K_RETURN and len(initials) == 3:
                         return initials
             screen.fill(NAVY)
-            temp_text = font.render(f"Enter your initials: {initials}", True, WHITE)
+            temp_text = silkscreen_font.render(f"Enter your initials: {initials}", True, WHITE)
             screen.blit(temp_text, (WIDTH / 2 - temp_text.get_width() / 2, HEIGHT / 2))
             pygame.display.flip()
         return initials
